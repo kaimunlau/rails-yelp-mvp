@@ -6,6 +6,8 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @reviews = @restaurant.reviews
+    @review = Review.new
+    @rating = @reviews.average(:rating)
   end
 
   def new
