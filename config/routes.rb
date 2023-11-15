@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'restaurants#index'
 
-  resources :restaurants, except: %i[edit update destroy]
+  resources :restaurants, except: %i[edit update destroy] do
+    resources :reviews, only: %i[new create]
+  end
 end

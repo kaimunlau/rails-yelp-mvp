@@ -7,4 +7,6 @@
 <h4>Phone Number</h4>
 <p><%= @restaurant.phone_number %></p>
 
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+
 <%= link_to "Back", restaurants_path %>
