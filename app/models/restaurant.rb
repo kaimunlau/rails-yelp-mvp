@@ -7,7 +7,7 @@ class Restaurant < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true, inclusion: { in: @categories }
 
-  def self.categories
-    @categories
+  class << self
+    attr_reader :categories
   end
 end
