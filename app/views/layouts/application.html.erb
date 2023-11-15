@@ -12,6 +12,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-light bg-light mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="/">Yelpidoo</a>
+        <%= link_to "Add New Restaurant", new_restaurant_path %>
+      </div>
+    </nav>
+    <div class="container w-50">
+      <%= yield %>
+    </div>
   </body>
 </html>
