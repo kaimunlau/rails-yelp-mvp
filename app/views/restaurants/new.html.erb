@@ -1,11 +1,14 @@
 <h1>Add New Restaurant</h1>
 
-<%= simple_form_for @restaurant do |f| %>
-  <%= f.input :name %>
-  <%= f.input :phone_number %>
-  <%= f.input :address %>
-  <%= f.input :category, collection: Restaurant.categories %>
-  <%= f.button :submit %>
-<% end %>
+<div class="w-75 m-auto border rounded shadow p-4 mb-3">
 
-<%= link_to "Back", restaurants_path %>
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :phone_number %>
+    <%= f.input :address %>
+    <%= f.input :category, collection: Restaurant.categories %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<%= link_to "Back to all restaurants", restaurants_path, class: "btn btn-secondary" %>

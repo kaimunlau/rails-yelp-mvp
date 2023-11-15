@@ -1,9 +1,13 @@
 <h1>Restaurants</h1>
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Add New Restaurant", new_restaurant_path %>
+<div>
+  <ul class="d-flex flex-wrap">
+    <% @restaurants.each do |restaurant| %>
+      <li class="list-group-item m-2 pt-3 rounded shadow">
+        <%= link_to restaurant.name, restaurant %>
+        <p class="m-0"><%= restaurant.category %></p>
+        <p class="m-0"><%= restaurant.reviews.average(:rating) %>/5 | <%= restaurant.reviews.size %> reviews</p>
+      </li>
+    <% end %>
+  </ul>
+</div>
